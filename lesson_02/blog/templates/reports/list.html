@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Users list
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <h1>List of reports</h1>
+            {% for report_id in reports %}
+                <ul>
+                    <li><a href="{{ url_for('report.get_report', pk=report_id) }}">{{ reports[report_id] }}</a></li>
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
